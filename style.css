@@ -1,0 +1,735 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Text",
+    "SF Pro Icons",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   BARRA DE NAVEGAÇÃO GLOBAL (TOP BAR)
+   ========================================= */
+
+.global-nav-wrap {
+  height: 44px;
+  background: #fff;
+  position: relative;
+  z-index: 100;
+}
+
+.global-nav {
+  width: min(1024px, calc(100% - 44px));
+  height: 44px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.global-nav > a {
+  color: #333336;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 12px;
+  letter-spacing: -0.01em;
+  opacity: 0.8;
+  transition: opacity 0.15s ease;
+}
+
+.global-nav > a:hover {
+  opacity: 1;
+  color: #000;
+}
+
+/* Logo Apple da Barra Global */
+.apple-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333336;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.15s ease;
+}
+
+.apple-mark:hover {
+  opacity: 1;
+}
+
+.apple-mark svg {
+  display: block;
+}
+
+/* Ícones de Busca e Sacola */
+.icon-button {
+  position: relative;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 24px;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.icon-button:hover {
+  opacity: 1;
+}
+
+.search-icon::before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  top: 4px;
+  left: 3px;
+  border: 1.6px solid #333336;
+  border-radius: 50%;
+}
+
+.search-icon::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 1.6px;
+  top: 16px;
+  left: 13px;
+  background: #333336;
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+
+.bag-icon::before {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  top: 8px;
+  left: 3px;
+  border: 1.5px solid #333336;
+  border-radius: 2px;
+}
+
+.bag-icon::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 5px;
+  top: 4px;
+  left: 6px;
+  border: 1.4px solid #333336;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+}
+
+/* =========================================
+   SUB-CABEÇALHO LOCAL ("CONTA APPLE")
+   ========================================= */
+
+.header {
+  height: 52px;
+  border-bottom: 1px solid #d2d2d7;
+  background: #fff;
+}
+
+.header-content {
+  width: min(1024px, calc(100% - 44px));
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  color: #1d1d1f;
+  text-decoration: none;
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav a {
+  color: #1d1d1f;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 12px;
+  letter-spacing: -0.01em;
+}
+
+.nav a:hover {
+  color: #0071e3;
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL / FORMULÁRIO DE LOGIN
+   ========================================= */
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 44px 20px 48px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Logo Circular com pontos coloridos */
+.account-mark {
+  display: block;
+  width: 154px;
+  height: 154px;
+  margin: 0 auto 26px;
+  user-select: none;
+}
+
+/* Títulos */
+h1 {
+  margin: 0 0 6px 0;
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #1d1d1f;
+}
+
+.subtitle {
+  margin: 0 0 32px 0;
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #1d1d1f;
+}
+
+/* Formulário e Campo de Entrada */
+.login-box {
+  width: 100%;
+  text-align: left;
+}
+
+.account-input {
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  border: 1px solid #86868b;
+  border-radius: 12px;
+  outline: none;
+  background: #fff;
+  color: #1d1d1f;
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.account-input::placeholder {
+  color: #6e6e73;
+}
+
+.account-input:focus {
+  border-color: #0071e3;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+}
+
+/* Seção de Privacidade Apple */
+.privacy-info {
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.privacy-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.privacy-info p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.38;
+  color: #424245;
+  letter-spacing: -0.01em;
+}
+
+.privacy-info a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.privacy-info a:hover {
+  text-decoration: underline;
+}
+
+/* Seção de Ações / Botões */
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.device-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  height: 42px;
+  border: 0;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.01em;
+}
+
+.continue-button {
+  background: #8ec5fc;
+  color: #fff;
+  cursor: default;
+}
+
+.device-button {
+  background: #1d1d1f;
+  color: #fff;
+  cursor: pointer;
+  gap: 8px;
+  transition: background 0.15s ease;
+}
+
+.device-button:hover {
+  background: #000;
+}
+
+.device-icon {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.device-subtext {
+  margin: 8px 0 0 0;
+  text-align: center;
+  color: #6e6e73;
+  font-size: 11px;
+  line-height: 1.3;
+  width: 100%;
+}
+
+/* Acessibilidade de foco */
+.global-nav a:focus-visible,
+.nav a:focus-visible,
+.brand:focus-visible,
+.privacy-info a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #0071e3;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   RODAPÉ (FOOTER)
+   ========================================= */
+
+.footer {
+  width: 100%;
+  background: #f5f5f7;
+  color: #88888c;
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 1.35;
+  border-top: 1px solid #d2d2d7;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  width: min(1024px, calc(100% - 44px));
+  margin: 0 auto;
+  padding: 14px 0 18px;
+}
+
+.footer-content > p {
+  margin: 0 0 5px 0;
+  color: #6e6e73;
+}
+
+.footer-content a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e5e7;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #6e6e73;
+}
+
+.footer-bottom span {
+  color: #555;
+  white-space: nowrap;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #424245;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-links span {
+  width: 1px;
+  height: 10px;
+  background: #d2d2d7;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (max-width: 800px) {
+  .global-nav > a:not(.apple-mark) {
+    display: none;
+  }
+
+  .global-nav .apple-mark {
+    margin-right: auto;
+  }
+
+  .header-content {
+    width: calc(100% - 32px);
+  }
+
+  .brand {
+    font-size: 18px;
+  }
+
+  .nav {
+    gap: 16px;
+  }
+
+  .nav a {
+    font-size: 11.5px;
+  }
+
+  .main {
+    padding: 32px 16px 40px;
+  }
+
+  .footer-content {
+    width: calc(100% - 32px);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    max-width: 100%;
+  }
+
+  .account-mark {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   ESTILOS DA PÁGINA PERGUNTAS FREQUENTES
+   ========================================= */
+
+.logo-apple {
+    height: 18px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.menu-principal {
+    background-color: rgba(245, 245, 247, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid #d2d2d7;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.menu-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
+}
+
+.menu-container a {
+    color: #1d1d1f;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.menu-container a:hover {
+    opacity: 1;
+}
+
+.menu-icone {
+    font-size: 14px !important;
+}
+
+.sub-menu {
+    border-bottom: 1px solid #d2d2d7;
+    background-color: #ffffff;
+}
+
+.sub-menu-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
+}
+
+.sub-menu-titulo {
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.022em;
+}
+
+.sub-menu-links a {
+    color: #1d1d1f;
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 24px;
+    opacity: 0.7;
+}
+
+.sub-menu-links a:hover {
+    color: #0066cc;
+    opacity: 1;
+}
+
+.sub-menu-links a.ativo {
+    opacity: 0.5;
+    pointer-events: none; 
+}
+
+.conteudo-principal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 22px;
+}
+
+.titulo-pagina {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.009em;
+    margin-bottom: 40px;
+}
+
+.bloco-pergunta {
+    margin-bottom: 32px;
+}
+
+.bloco-pergunta h2 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.009em;
+    margin-bottom: 12px;
+}
+
+.bloco-pergunta p {
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    color: #1d1d1f;
+}
+
+.bloco-pergunta p a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.bloco-pergunta p a:hover {
+    text-decoration: underline;
+}
+
+.rodape-principal {
+    background-color: #f5f5f7;
+    color: #86868b;
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.rodape-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+.rodape-principal a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.rodape-principal a:hover {
+    text-decoration: underline;
+}
+
+.rodape-vendas {
+    padding-bottom: 15px;
+}
+
+.rodape-vendas p {
+    margin-bottom: 5px;
+}
+
+.rodape-divisor {
+    border-bottom: 1px solid #d2d2d7;
+    margin-bottom: 15px;
+}
+
+.rodape-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.legal-esquerda {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.direitos-autorais {
+    margin-right: 20px;
+    color: #86868b;
+}
+
+.legal-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.legal-links a {
+    color: #515154;
+    position: relative;
+    margin-right: 14px;
+}
+
+.legal-links a:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 3px;
+    height: 10px;
+    border-right: 1px solid #d2d2d7;
+}
+
+.legal-links a:hover {
+    color: #1d1d1f;
+}
+
+.link-pais {
+    color: #515154 !important;
+}
+
+.link-pais:hover {
+    color: #1d1d1f !important;
+}

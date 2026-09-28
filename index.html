@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conta Apple </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="global-nav-wrap">
+    <nav class="global-nav" aria-label="Navegação Apple">
+      <a class="apple-mark" href="#inicio" aria-label="Apple">
+        <svg viewBox="0 0 17 44" width="15" height="44" fill="currentColor">
+          <path d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6814.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.651-2.644.651s-1.6834-.9037-2.4478-1.9933a12.247 12.247 0 0 1 -1.8906-6.1979c0-3.666 2.3779-5.5991 4.719-5.5991 1.2494 0 2.2965.8262 3.0594.8262s1.952-.8781 3.3283-.8781a4.582 4.582 0 0 1 1.5543.3402 3.738 3.738 0 0 0 -2.4807 3.037zm-2.0084-5.2646a3.5677 3.5677 0 0 0 .8262-2.4187 3.6521 3.6521 0 0 0 -2.3667 1.2187 3.42 3.42 0 0 0 -.8474 2.3248 3.02 3.02 0 0 0 2.3879-1.1248z"/>
+        </svg>
+      </a>
+      <a href="#inicio">Loja</a>
+      <a href="#inicio">Mac</a>
+      <a href="#inicio">iPad</a>
+      <a href="#inicio">iPhone</a>
+      <a href="#inicio">Watch</a>
+      <a href="#inicio">AirPods</a>
+      <a href="#inicio">TV e Casa</a>
+      <a href="#inicio">Entretenimento</a>
+      <a href="#inicio">Acessórios</a>
+      <a href="#inicio">Suporte</a>
+      <span class="icon-button search-icon" aria-hidden="true"></span>
+      <span class="icon-button bag-icon" aria-hidden="true"></span>
+    </nav>
+  </div>
+  <header class="header">
+    <div class="header-content">
+      <a href="#inicio" class="brand">Conta Apple</a>
+
+      <nav class="nav">
+        <a href="#login">Iniciar sessão</a>
+        <a href="#login">Crie sua Conta Apple</a>
+        <a href="perguntas.html">Perguntas frequentes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="login-container" id="inicio" aria-labelledby="page-title">
+      <img class="account-mark" src="account-logo.svg" alt="Logo Apple cercada por pontos coloridos">
+
+      <h1 id="page-title">Conta Apple</h1>
+      <p class="subtitle">Gerencie sua Conta Apple</p>
+
+      <div class="login-box" id="login">
+        <input
+          type="text"
+          class="account-input"
+          placeholder="E-mail ou número de telefone"
+          aria-label="E-mail ou número de telefone (indisponível nesta demonstração)"
+          disabled
+        >
+
+        <div class="privacy-info" id="perguntas">
+          <img
+            class="privacy-icon"
+            src="https://appleid.cdn-apple.com/appleauth/static/bin/cb1754975187/dist/assets/privacy.svg"
+            alt=""
+            aria-hidden="true"
+          >
+          
+          <p>
+            As informações da sua Conta Apple são usadas para permitir que você inicie sessão com segurança 
+            e acesse seus dados. A Apple registra determinados dados para fins de segurança, suporte e 
+            relatórios. Se você concordar, a Apple também poderá usar as informações da sua Conta Apple para 
+            enviar a você e-mails e comunicações de marketing, inclusive com base no seu uso dos serviços da Apple. <br>
+            <a href="#perguntas">Veja como os seus dados são gerenciados...</a>
+          </p>
+        </div>
+
+        <div class="buttons">
+          <button class="continue-button" disabled>
+            Continuar
+          </button>
+
+          <div class="device-col">
+            <button class="device-button" type="button" id="deviceButton">
+              <svg class="device-icon" viewBox="0 0 18 18" width="16" height="16" fill="currentColor" aria-hidden="true">
+                <path d="M5.5 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-3.5 6.5c0-1.9 2-3 3.5-3 .4 0 .8.08 1.2.22-.3.6-.5 1.3-.5 2.03v.75H2ZM13 5.5h-3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-.2 8.2a.3.3 0 0 1-.3.3h-2.2a.3.3 0 0 1-.3-.3V7.3a.3.3 0 0 1 .3-.3h2.2a.3.3 0 0 1 .3.3v6.4Z"/>
+              </svg>
+              Inicie sessão com o iPhone
+            </button>
+            <p class="device-subtext">Requer um dispositivo com iOS 17 ou posterior.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+
+      <p>
+        Outras formas de comprar:
+        <a href="#">encontre uma Apple Store</a>
+        ou
+        <a href="#">revendedor Apple</a>
+        na sua região. Ou ligue para 0800-761-0867.
+        Rua Leopoldo Couto de Magalhães Jr., 700, 7º andar,
+        Itaim Bibi, São Paulo, SP. CEP: 04542-000.
+      </p>
+
+      <p>
+        Os Serviços de Mídia da Apple são fornecidos pela Apple Services LATAM LLC.
+      </p>
+
+      <div class="footer-bottom">
+        <p>
+          Copyright © 2026 Apple Inc. Todos os direitos reservados.
+          Apple Computer Brasil Ltda. CNPJ: 00.623.904/0003-35
+        </p>
+
+        <span>Brasil</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Política de Privacidade</a>
+        <span></span>
+
+        <a href="#">Política de vendas</a>
+        <span></span>
+
+        <a href="#">Avisos legais</a>
+        <span></span>
+
+        <a href="#">Mapa do site</a>
+      </div>
+
+    </div>
+  </footer>
+</body>
+</html>
